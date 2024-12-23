@@ -33,6 +33,9 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'react/prop-types': 'off',
+      'quotes': ['warn', 'single'],
+      'space-before-function-paren': ['warn', 'always'],
     },
   },
 ]
