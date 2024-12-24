@@ -3,7 +3,7 @@ import { Button } from './components/ui/button';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Header } from './components/header/Header';
 
-function App() {
+function App () {
   const location = useLocation()
   const path = location.pathname
   const [darkMode, setDarkMode] = useState(true);

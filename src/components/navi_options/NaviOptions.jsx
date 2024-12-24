@@ -8,7 +8,7 @@ export const NaviOptions = ({ items = [] }) => {
     if (item.content) {
       return (
         <NavigationMenuItem key={index}>
-        <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+          <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
           <NavigationMenuContent>
             {item.content}
           </NavigationMenuContent>

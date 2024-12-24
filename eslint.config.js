@@ -37,6 +37,7 @@ export default [
       'react/prop-types': 'off',
       'quotes': ['warn', 'single'],
       'space-before-function-paren': ['warn', 'always'],
+      'indent': ['warn', 2],
     },
   },
 ]
