@@ -2,6 +2,7 @@ import { Header } from '@/components/header/Header'
 import { Hero } from '@/layouts/hero/Hero';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Fotter } from '@/layouts/footer/Fotter';
 
 export const Landing = () => {
   const location = useLocation()
@@ -14,16 +15,12 @@ export const Landing = () => {
   }, []);
 
   return (
-    <div className='flex min-h-screen justify-center px-5'>
-      <div className="flex flex-col w-full max-w-3xl gap-2">
-        <Header path={path}/>
-        <main className='h-full'>
-          <Hero />
-        </main>
-        <footer>
-          footer
-        </footer>
-      </div>
+    <div className='flex flex-col min-h-screen items-center px-5'>
+      <Header path={path}/>
+      <main className='flex flex-col h-full w-full max-w-3xl gap-2 items-center m-auto'>
+        <Hero />
+      </main>
+      <Fotter />
     </div>
   )
 }

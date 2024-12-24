@@ -14,17 +14,20 @@ export const Header = ({ path }) => {
   }, [path])
   
   return (
-    <div>
-      <header className='flex justify-between items-center py-4'>
-        <h1 className='text-2xl font-semibold'>
+    <header className="flex w-full justify-center sticky top-0 backdrop:blur-sm bg-background">
+      <div className='flex justify-between w-full max-w-3xl items-center py-4'>
+        <h1 className='text-2xl font-semibold hidden md:block'>
           <Link to='/'>Relatos de Papel</Link>
         </h1>
-        <div className='flex'>
+        <h1 className='text-2xl font-semibold md:hidden'>
+          <Link to='/'>RP</Link>
+        </h1>
+        <div className='hidden md:flex'>
           <NaviOptions items={navItems}/>
           <Separator orientation='vertical' className='h-[36px] mx-4'/>
           <NaviOptions items={navItems2}/>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   )
 }
