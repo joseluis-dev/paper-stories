@@ -13,8 +13,8 @@ export const Fotter = () => {
         </div>
         <div className="flex gap-1 items-center">
           <a href="https://www.facebook.com" target='_blank' className="px-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary"><SiFacebook size={20}/></a>
-          <a href="https://www.x.com" target='_blank' className="px-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-primary"><SiX size={20}/></a>
-          <a href="https://www.instagram.com" target='_blank' className="px-2 text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-primary"><SiInstagram size={20}/></a>
+          <a href="https://www.x.com" target='_blank' className="px-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"><SiX size={20}/></a>
+          <a href="https://www.instagram.com" target='_blank' className="px-2 text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-600"><SiInstagram size={20}/></a>
         </div>
       </div>
     </footer>

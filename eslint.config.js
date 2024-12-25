@@ -38,6 +38,7 @@ export default [
       'quotes': ['warn', 'single'],
       'space-before-function-paren': ['warn', 'always'],
       'indent': ['warn', 2],
+      'semi': ['warn', 'never'],
     },
   },
 ]

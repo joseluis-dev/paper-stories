@@ -1,15 +1,24 @@
 import { NaviOptions } from '@/components/navi_options/NaviOptions'
 import { Separator } from '@/components/ui/separator'
-import { navItemsLanding, navItemsIcons } from '@/services/navItems'
-import { useMemo } from 'react'
+import { navItemsLanding, navItemsIcons, navItemsStore } from '@/services/navItems'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from '../../components/ui/button'
+import { Moon, Sun } from 'lucide-react'
 
 export const Header = ({ path }) => {
+  const [darkMode, setDarkMode] = useState(path === '/' ? false : true)
+
+  useEffect(() => {
+    const body = document.querySelector('body')
+    body.classList.toggle('dark', darkMode)
+  }, [darkMode])
+
   const [navItems, navItems2] = useMemo(() => {
     if (path === '/') {
       return [navItemsLanding, navItemsIcons]
     } else {
-      return []
+      return [navItemsStore, navItemsIcons]
     }
   }, [path])
   
@@ -24,8 +33,13 @@ export const Header = ({ path }) => {
         </h1>
         <div className='hidden md:flex'>
           <NaviOptions items={navItems}/>
-          <Separator orientation='vertical' className='h-[36px] mx-4'/>
+          <Separator orientation='vertical' className='h-[36px] mx-2'/>
           <NaviOptions items={navItems2}/>
+          {path !== '/' && (
+            <Button variant='ghost' className='mx-1 dark:text-white text-black' onClick={() => setDarkMode((prev) => !prev)}>
+              {!darkMode ? <Moon /> : <Sun />}
+            </Button>
+          )}
         </div>
       </div>
     </header>
