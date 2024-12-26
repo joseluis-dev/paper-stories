@@ -39,6 +39,7 @@ export default [
       'space-before-function-paren': ['warn', 'always'],
       'indent': ['warn', 2],
       'semi': ['warn', 'never'],
+      'object-curly-spacing': ['warn', 'always'],
     },
   },
 ]
