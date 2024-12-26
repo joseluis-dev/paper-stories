@@ -78,4 +78,9 @@
     background: hsl(240, 3%, 65%);
     border-radius: 0.25rem;
   }
+
+  .main-layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
 }

@@ -3,7 +3,7 @@ import { ShoppingCart } from 'lucide-react'
 export const navItemsLanding = [
   {
     title: 'Tienda',
-    link: '/home'
+    link: '/store'
   },
   {
     title: 'Blog',
@@ -22,7 +22,7 @@ export const navItemsLanding = [
 export const navItemsStore = [
   {
     title: 'Inicio',
-    link: '/home'
+    link: '/store'
   },
   {
     title: 'Blog',
@@ -41,6 +41,6 @@ export const navItemsStore = [
 export const navItemsIcons = [
   {
     title: <ShoppingCart />,
-    link: '/home/cart'
+    link: '/store/cart'
   }
 ]

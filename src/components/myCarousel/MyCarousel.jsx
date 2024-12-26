@@ -16,17 +16,17 @@ const defaultItems = [
 
 export const MyCarousel = ({ items = defaultItems, children = null }) => {
   const [api, setApi] = useState()
-  console.log(items)
+  // console.log(items)
   useEffect(() => {
     if (!api) {
       return
     }
- 
+
     api.on('select', () => {
-      // Do something on select.
+      // Comportamiento al hacer click en las flechas
     })
   }, [api])
- 
+
   return (
     <Carousel setApi={setApi} className="w-full max-w-[90%]">
       <CarouselContent className="-ml-1">

@@ -2,7 +2,7 @@ import { SiFacebook, SiInstagram, SiX } from '@icons-pack/react-simple-icons'
 
 export const Fotter = () => {
   return (
-    <footer className='flex justify-center gap-2 w-full max-w-3xl items-center py-3 flex-wrap sm:justify-between'>
+    <footer className='flex justify-center gap-2 w-full max-w-3xl items-center py-3 flex-wrap sm:justify-between mx-auto'>
       <p className='w-full sm:w-fit text-center text-sm text-gray-500 dark:text-gray-400'>
               &copy; 2024 Todos los derechos reservados.
       </p>

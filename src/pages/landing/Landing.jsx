@@ -4,9 +4,9 @@ import { Fotter } from '@/layouts/footer/Fotter'
 
 export const Landing = () => {
   return (
-    <div className='flex flex-col min-h-screen items-center px-5'>
+    <div className='main-layout min-h-screen items-center px-5'>
       <Header />
-      <main className='flex flex-col h-full w-full max-w-3xl gap-2 items-center m-auto'>
+      <main className='flex flex-col h-full w-full max-w-3xl gap-2 items-center mx-auto'>
         <Hero />
       </main>
       <Fotter />

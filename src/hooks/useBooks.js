@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { create } from 'zustand'
 
 
-export const useBookStore = create((set) => ({
+const useBookStore = create((set) => ({
   books: {},
   isLoading: false,
   error: null,
@@ -20,8 +20,8 @@ export const useBookStore = create((set) => ({
   loadBooks: async (query) => {
     set({ isLoading: true })
     try {
-      const data = await getFetcher(`${import.meta.env.VITE_API_GOOGLE_URL}=${query}`)
-      console.log(data)
+      const data = await getFetcher(`${import.meta.env.VITE_API_GOOGLE_URL}?q=${query}`)
+      // console.log(data)
       const dataFormated = data.items.map((book) => ({
         id: book.id,
         title: book.volumeInfo.title,
@@ -53,5 +53,58 @@ export const useBooks = ({ query = '' } = { query: 'bestsellers' }) => {
     addBook, 
     removeBook, 
     loadBooks
+  }
+}
+
+const useSingleBookStore = create((set) => ({
+  book: {},
+  isLoading: false,
+  error: null,
+  addBook: (book) => {
+    set({ book })
+    // llamar a la api para guardar el libro
+  },
+  removeBook: () => {
+    set({ book: {} })
+    // llamar a la api para eliminar el libro
+  },
+  loadBook: async (id) => {
+    set({ isLoading: true })
+    try {
+      const data = await getFetcher(`${import.meta.env.VITE_API_GOOGLE_URL}/${id}`)
+      console.log(data)
+      const dataFormated = {
+        id: data.id,
+        title: data.volumeInfo.title,
+        authors: data.volumeInfo.authors,
+        description: data.volumeInfo.description || 'No description',
+        image: data.volumeInfo.imageLinks.large,
+        date: data.volumeInfo.publishedDate,
+        price: data.saleInfo.retailPrice?.amount,
+        rate: data.volumeInfo.averageRating || '-',
+        publisher: data.volumeInfo.publisher,
+        categories: data.volumeInfo.categories,
+      }
+      set({ book: dataFormated, isLoading: false })
+    } catch (error) {
+      set({ error, isLoading: false })
+    }
+  }
+}))
+
+export const useSingleBook = ({ id = '' }) => {
+  const { book, isLoading, error, addBook, removeBook, loadBook } = useSingleBookStore((state) => state)
+
+  useEffect(() => {
+    loadBook(`${id}`)
+  }, [loadBook, id])
+  
+  return { 
+    book, 
+    isLoading, 
+    error, 
+    addBook, 
+    removeBook, 
+    loadBook
   }
 }

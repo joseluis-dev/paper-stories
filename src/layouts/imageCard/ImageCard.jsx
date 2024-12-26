@@ -2,8 +2,9 @@ import { MyCard } from '@/components/myCard/MyCard'
 import { Button } from '@/components/ui/button'
 import { CardDescription, CardTitle } from '@/components/ui/card'
 import { ShoppingCart, Star } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-export const BookCard = ({ title, date, rate, image, authors, description, price }) => {
+export const ImageCard = ({ id, title, date, rate, image, authors, description, price }) => {
   return (
     <MyCard
       cardHeader={() => (
@@ -19,7 +20,9 @@ export const BookCard = ({ title, date, rate, image, authors, description, price
       )}
       cardContent={() => (
         <div className="flex flex-col items-center gap-2">
-          <img src={image} alt={title} className="h-48 max-w-[200px] object-cover rounded-md" />
+          <Link to={`/store/books/${id}`}>
+            <img src={image} alt={title} className="h-48 max-w-[200px] object-cover rounded-md" />
+          </Link>
           <div className="flex flex-col w-full gap-2 overflow-auto min-h-[68px] max-h-[68px]">
             <p className="text-sm">
               <span className='font-bold'>Authors: </span> {authors}
