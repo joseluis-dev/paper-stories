@@ -3,7 +3,7 @@ import { Skeleton } from '../ui/skeleton'
 
 export const ImageLoader = ({ src, alt, className }) => {
   const [imgLoaded, setImgLoaded] = useState(false)
-  console.log(src)
+  // console.log(src)
   useEffect(() => {
     const img = new Image()
     img.src = src

@@ -1,15 +1,15 @@
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
-export const MyCard = ({ cardHeader = () => null, cardContent = () => null, cardFooter = () => null }) => {
+export const MyCard = ({ cardHeader = () => null, cardContent = () => null, cardFooter = () => null, classNames = { card: '', cardHeader: '', cardContent: '', cardFooter: '' } }) => {
   return (
-    <Card>
-      <CardHeader>
+    <Card className={classNames.card}>
+      <CardHeader className={classNames.cardHeader}>
         {cardHeader()}
       </CardHeader>
-      <CardContent>
+      <CardContent className={classNames.cardContent}>
         {cardContent()}
       </CardContent>
-      <CardFooter>
+      <CardFooter className={classNames.cardFooter}>
         {cardFooter()}
       </CardFooter>
     </Card>

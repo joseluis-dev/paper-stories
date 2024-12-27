@@ -6,7 +6,7 @@ export const Home = () => {
     <div className='flex flex-col gap-4'>
       <CarouselSection title='Destacados' icon={<BookOpenCheckIcon />} bookType='award winning books'/>
       <CarouselSection title='Ficción' icon={<BookOpenCheckIcon />} bookType='ficción'/>
-      <CarouselSection title='Novelas' icon={<BookOpenCheckIcon />} bookType='novela'/>
+      {/* <CarouselSection title='Novelas' icon={<BookOpenCheckIcon />} bookType='novela'/> */}
     </div>
   )
 }

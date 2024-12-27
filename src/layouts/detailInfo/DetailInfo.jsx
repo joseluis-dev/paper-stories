@@ -3,13 +3,16 @@ import { ImageLoader } from '@/components/imageLoader/ImageLoader'
 import { MyCard } from '@/components/myCard/MyCard'
 import { Button } from '@/components/ui/button'
 import { CardDescription, CardTitle } from '@/components/ui/card'
+import { useCart } from '@/hooks/useCart'
 import { ShoppingCart, Star } from 'lucide-react'
 
 export const DetailInfo = ({ book }) => {
+  const { cart, addToCart } = useCart()
+  console.log(cart)
   return (
-    <div className='flex flex-col h-full gap-2 justify-center items-center'>
-      <div className="flex h-full gap-4 items-center w-full max-w-[483px] md:max-w-full">
-        <div className="flex-col hidden md:flex gap-2 h-full w-full min-w-[269px] max-w-[269px] justify-center">
+    <div className='flex flex-col min-h-full gap-2 justify-center items-center'>
+      <div className="flex gap-4 items-center w-full max-w-[483px] md:max-w-full">
+        <div className="flex-col hidden md:flex gap-2 w-full min-w-[269px] max-w-[269px] justify-center">
           <ImageLoader className={'h-[400px] bg-cover rounded-md'} alt={'Book Image'} src={book.image}/>
           <p className='font-bold mt-4'>Categorías: </p>
           <p>{book.categories?.join(', ')}</p>
@@ -42,7 +45,7 @@ export const DetailInfo = ({ book }) => {
             </div>
           )}
           cardFooter={() => (
-            <Button className="w-full">
+            <Button className="w-full" onClick={() => addToCart(book)}>
               <ShoppingCart /> Add to cart {book.price && `($${book.price})`}
             </Button>
           )}

@@ -1,6 +1,7 @@
 import { Header } from '@/layouts/header/Header'
 import { Hero } from '@/layouts/hero/Hero'
 import { Fotter } from '@/layouts/footer/Fotter'
+import { Toaster } from '@/components/ui/toaster'
 
 export const Landing = () => {
   return (
@@ -10,6 +11,7 @@ export const Landing = () => {
         <Hero />
       </main>
       <Fotter />
+      <Toaster />
     </div>
   )
 }
