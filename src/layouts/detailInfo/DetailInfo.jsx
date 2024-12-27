@@ -33,8 +33,8 @@ export const DetailInfo = ({ book }) => {
             </>
           )}
           cardContent={() => (
-            <div className="flex flex-col items-center gap-2">
-              <ImageLoader className={'w-full max-h-[400px] max-w-[269px] bg-cover block md:hidden rounded-md'} alt={'Book Image'} src={book.image}/>
+            <div className="flex flex-col items-center gap-2 min-w-[430px]">
+              <ImageLoader className={'w-full h-[400px] max-w-[269px] bg-cover block md:hidden rounded-md'} alt={'Book Image'} src={book.image}/>
               <span className='font-bold self-start'>Descripción: </span>
               <div className="flex flex-col w-full gap-2 overflow-auto h-full md:min-h-[350px] max-h-[350px] md:min-w-[430px]">
                 <DompurifyContainer html={book.description} />

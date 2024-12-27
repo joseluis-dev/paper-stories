@@ -12,7 +12,7 @@ export const DetailInfoSkeleton = () => {
         </div>
         <MyCard
           cardHeader={() => (
-            <div className='flex flex-col gap-2 w-full md:min-w-[430px]'>
+            <div className='flex flex-col gap-2 w-full min-w-[430px]'>
               <Skeleton className="h-16 w-full"/>
               <Skeleton className="h-5 w-full" />
               <Skeleton className="h-5 w-[50%]" />
@@ -20,10 +20,11 @@ export const DetailInfoSkeleton = () => {
             </div>
           )}
           cardContent={() => (
-            <>
-              <Skeleton className="h-6 w-full" />
+            <div className="flex flex-col items-center gap-2">
+              <Skeleton className="h-[400px] w-full max-w-[269px] block md:hidden" />
+              <Skeleton className="h-6 w-[50%] self-start" />
               <Skeleton className="h-[350px] w-full" />
-            </>
+            </div>
           )}
           cardFooter={() => (
             <Skeleton className="h-9 w-full" />
