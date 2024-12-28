@@ -19,14 +19,14 @@ export const CartItemCard = ({ item }) => {
   }
   return (
     <div className='flex gap-4 py-4 border-b-[1px]'>
-      <ImageLoader src={item.image} alt={`Imagen de ${item.title}`} className={'min-h-[100px] w-full max-w-[160px] rounded-md'}/>
+      <ImageLoader src={item.image} alt={`Imagen de ${item.title}`} className={'min-h-[192px] max-h-[192px] w-full max-w-[128px] rounded-md'}/>
       <MyCard
         classNames={{
           card: 'w-full border-none'
         }}
         cardHeader={() => (
           <>
-            <CardTitle className={'text-2xl flex justify-between items-center'}>
+            <CardTitle className={'md:text-2xl flex justify-between items-center gap-2'}>
               <h2>{item.title}</h2>
               <span>${item.totalPrice}</span>
             </CardTitle>

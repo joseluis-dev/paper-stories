@@ -9,13 +9,11 @@ const useBookStore = create((set) => ({
   error: null,
   addBook: (book, bookType) => {
     set((state) => ({ books: { ...state.books, [bookType]:book } }))
-    // llamar a la api para guardar el libro
   },
   removeBook: (book, bookType) => {
     set((state) => ({
       books: { ...state.books, [bookType]: state.books[bookType].filter((b) => b.id !== book.id) },
     }))
-    // llamar a la api para eliminar el libro
   },
   loadBooks: async (query) => {
     set({ isLoading: true })
