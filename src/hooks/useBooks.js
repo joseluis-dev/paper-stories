@@ -16,10 +16,15 @@ const useBookStore = create((set) => ({
     }))
   },
   loadBooks: async (query) => {
+    const books = useBookStore.getState().books
+    if (books[query]) {
+      set({ isLoading: false })
+      return
+    }
     set({ isLoading: true })
+    // console.warn('fetching...')
     try {
       const data = await getFetcher(`${import.meta.env.VITE_API_GOOGLE_URL}?q=${query}`)
-      // console.log(data)
       const dataFormated = data.items.map((book) => ({
         id: book.id,
         title: book.volumeInfo.title,
@@ -37,11 +42,11 @@ const useBookStore = create((set) => ({
   }
 }))
 
-export const useBooks = ({ query = '' } = { query: 'bestsellers' }) => {
+export const useBooks = ({ query = '' } = { query: '' }) => {
   const { books, isLoading, error, addBook, removeBook, loadBooks } = useBookStore((state) => state)
 
   useEffect(() => {
-    loadBooks(`${query}`)
+    query && loadBooks(`${query}`)
   }, [loadBooks, query])
   
   return { 
@@ -70,13 +75,12 @@ const useSingleBookStore = create((set) => ({
     set({ isLoading: true })
     try {
       const data = await getFetcher(`${import.meta.env.VITE_API_GOOGLE_URL}/${id}`)
-      console.log(data)
       const dataFormated = {
         id: data.id,
         title: data.volumeInfo.title,
         authors: data.volumeInfo.authors,
         description: data.volumeInfo.description || 'No description',
-        image: data.volumeInfo.imageLinks.large,
+        image: data.volumeInfo.imageLinks.large || data.volumeInfo.imageLinks.thumbnail,
         date: data.volumeInfo.publishedDate,
         price: parseFloat(data.saleInfo.retailPrice?.amount),
         rate: data.volumeInfo.averageRating || '-',

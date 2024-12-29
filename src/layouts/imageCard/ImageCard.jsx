@@ -9,7 +9,7 @@ export const ImageCard = ({ book, action = () => {} }) => {
     <MyCard
       cardHeader={() => (
         <>
-          <CardTitle className='min-h-[32px]'>{book.title}</CardTitle>
+          <CardTitle className='h-full min-h-[32px] max-h-[32px] overflow-auto'>{book.title}</CardTitle>
           <CardDescription>
             <div className='flex justify-between items-center gap-2'>
               <span>{book.date}</span>
@@ -36,7 +36,7 @@ export const ImageCard = ({ book, action = () => {} }) => {
       )}
       cardFooter={() => (
         <>
-          <Button className="w-full" onClick={() => action(book)}>
+          <Button className="w-full" onClick={() => action(book)} disabled={!book.price}>
             <ShoppingCart /> Add to cart {book.price && `($${book.price})`}
           </Button>
         </>

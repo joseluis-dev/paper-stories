@@ -15,6 +15,7 @@ export default {
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			background: 'hsl(var(--background))',
+				"background-80": 'hsl(var(--background-80))',
   			text: {
   				light: '#000000',
   				dark: '#FFFFFF'

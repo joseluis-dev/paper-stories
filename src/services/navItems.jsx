@@ -25,22 +25,7 @@ export const navItemsStore = [
     link: '/store'
   },
   {
-    title: 'Blog',
-    link: '#'
-  },
-  {
-    title: 'Acerca de',
-    link: '#'
-  },
-  {
     title: 'Contacto',
     link: '#'
-  }
-]
-
-export const navItemsIcons = [
-  {
-    title: <ShoppingCart />,
-    link: '/store/cart'
   }
 ]

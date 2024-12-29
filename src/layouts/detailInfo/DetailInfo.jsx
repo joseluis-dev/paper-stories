@@ -5,10 +5,24 @@ import { Button } from '@/components/ui/button'
 import { CardDescription, CardTitle } from '@/components/ui/card'
 import { useCart } from '@/hooks/useCart'
 import { ShoppingCart, Star } from 'lucide-react'
+import { useToast } from '@/hooks/use-toast'
+import { Check } from 'lucide-react'
 
 export const DetailInfo = ({ book }) => {
-  const { cart, addToCart } = useCart()
-  console.log(cart)
+  const { addToCart } = useCart()
+  const { toast } = useToast()
+
+  const handleAddToCart = () => {
+    addToCart(book)
+    toast({
+      title: <div className='flex gap-2 items-center'>
+        <Check className='text-green-600'/>
+        <h2>Se añadió al carrito</h2>
+      </div>,
+      description: `Se ha agregado ${book.title} al carrito`
+    })
+  }
+  
   return (
     <div className='flex flex-col min-h-full gap-2 justify-center items-center'>
       <div className="flex gap-4 items-center w-full max-w-[483px] md:max-w-full">
@@ -45,7 +59,7 @@ export const DetailInfo = ({ book }) => {
             </div>
           )}
           cardFooter={() => (
-            <Button className="w-full" onClick={() => addToCart(book)}>
+            <Button className="w-full" onClick={() => handleAddToCart(book)}>
               <ShoppingCart /> Add to cart {book.price && `($${book.price})`}
             </Button>
           )}
