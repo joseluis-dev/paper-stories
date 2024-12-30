@@ -23,7 +23,7 @@ const useCartStore = create((set) => ({
     total: (parseFloat(state.total) - parseFloat(item.totalPrice)).toFixed(2),
     totalItems: state.totalItems - item.quantity
   })),
-  clearCart: () => set({ cart: [], total: 0 }),
+  clearCart: () => set({ cart: [], total: 0, totalItems: 0 }),
   updateCart: (item, quantity) => set((state) => ({
     cart: state.cart.map((b) => (b.id === item.id ? { ...b, quantity, totalPrice: (quantity * item.price).toFixed(2) } : b)),
     total: (parseFloat(state.total) + (quantity - item.quantity) * item.price).toFixed(2),
