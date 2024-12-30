@@ -9,8 +9,7 @@ export const ShippingForm = ({ setSuccess, setOpen }) => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
   const { cart } = useCart()
 
-  const onSubmit = (values) => {
-    console.log(values)
+  const onSubmit = () => {
     if (cart.length > 0) {
       setSuccess(true)
       reset()

@@ -82,7 +82,7 @@ const useSingleBookStore = create((set) => ({
         description: data.volumeInfo.description || 'No description',
         image: data.volumeInfo.imageLinks.large || data.volumeInfo.imageLinks.thumbnail,
         date: data.volumeInfo.publishedDate,
-        price: parseFloat(data.saleInfo.retailPrice?.amount),
+        price: data.saleInfo.retailPrice?.amount,
         rate: data.volumeInfo.averageRating || '-',
         publisher: data.volumeInfo.publisher,
         categories: data.volumeInfo.categories,
