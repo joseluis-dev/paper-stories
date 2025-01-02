@@ -1,5 +1,3 @@
-import { ShoppingCart } from 'lucide-react'
-
 export const navItemsLanding = [
   {
     title: 'Tienda',
@@ -23,6 +21,10 @@ export const navItemsStore = [
   {
     title: 'Inicio',
     link: '/store'
+  },
+  {
+    title: 'Blog',
+    link: '#'
   },
   {
     title: 'Contacto',

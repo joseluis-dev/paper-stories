@@ -10,6 +10,15 @@ export const Landing = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
+    timerRef.current = setTimeout(() => navigate('/store'), 5000)
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current)
+      }
+    }
+  }, [navigate])
+
+  useEffect(() => {
     const events = ['mousemove', 'keydown', 'scroll', 'click']
     const handleEvent = () => {
       if (timerRef.current) {
@@ -28,9 +37,9 @@ export const Landing = () => {
   }, [navigate])
 
   return (
-    <div className='main-layout min-h-screen items-center px-5'>
+    <div className='main-layout min-h-screen items-center'>
       <Header />
-      <main className='flex flex-col h-full w-full max-w-5xl gap-2 items-center mx-auto'>
+      <main className='flex flex-col h-full w-full max-w-5xl gap-2 items-center mx-auto px-5'>
         <Hero />
       </main>
       <Fotter />
