@@ -22,9 +22,10 @@ export const Checkout = () => {
 
   return (
     <div className='flex w-full h-full items-center'>
-      <div className="flex w-full gap-4">
+      <div className="flex w-full gap-4 md:flex-row flex-col justify-center items-center">
         <CheckoutDetail />
-        <Separator orientation='vertical' className='h-96' />
+        <Separator orientation='vertical' className='h-96 hidden md:block' />
+        <Separator orientation='horizontal' className='block md:hidden' />
         <ShippingForm setSuccess={setSuccess} setOpen={setOpen}/>
         <DialogModal open={open} onOpenChange={handleOpenChange} success={success}/>
       </div>

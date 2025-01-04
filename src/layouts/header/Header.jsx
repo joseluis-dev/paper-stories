@@ -3,11 +3,11 @@ import { Separator } from '@/components/ui/separator'
 import { navItemsLanding, navItemsStore } from '@/services/navItems'
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Button } from '../../components/ui/button'
+import { Button } from '@/components/ui/button'
 import { Moon, Search, Sun } from 'lucide-react'
 import { Input } from '@/components/ui/input'
-import { BurgerMenu } from '../burgerMenu/BurgerMenu'
-import { CartHoverButton } from '../cartHoverButton/CartHoverButton'
+import { BurgerMenu } from '@/layouts/burgerMenu/BurgerMenu'
+import { CartHoverButton } from '@/layouts/cartHoverButton/CartHoverButton'
 
 export const Header = () => {
   const location = useLocation()

@@ -38,8 +38,8 @@ export const CartItemCard = ({ item }) => {
         cardContent={() => (
           <>
             <div className='flex justify-between items-center'>
-              <div className='flex md:flex-nowrap items-center gap-4 max-w-[30%]'>
-                <p className='flex font-bold'>Cantidad: </p>
+              <div className='flex items-center gap-2 md:gap-4 md:max-w-[30%]'>
+                <p className='flex font-bold w-full'>Cantidad: </p>
                 <Input
                   className='w-full'
                   type='number'
@@ -49,11 +49,16 @@ export const CartItemCard = ({ item }) => {
                   max={10}
                 />
               </div>
-              <Button variant='secondary' onClick={handleRemove}>
+              <Button variant='secondary' onClick={handleRemove} className='hidden sm:flex'>
                 <Trash className='text-red-600'/>
               </Button>
             </div>
           </>
+        )}
+        cardFooter={() => (
+          <Button variant='secondary' onClick={handleRemove} className='w-full flex sm:hidden'>
+            <Trash className='text-red-600'/>
+          </Button>
         )}
       />
     </div>
