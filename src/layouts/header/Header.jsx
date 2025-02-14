@@ -38,15 +38,15 @@ export const Header = () => {
     <header className="flex w-full justify-center sticky top-0 backdrop-blur-sm bg-background-80 z-50 px-5">
       <div className='flex justify-between w-full max-w-5xl items-center py-4 gap-2'>
         <h1 className='text-2xl font-semibold text-nowrap hidden md:block z-50'>
-          <Link to='/'>Relatos de Papel</Link>
+          <Link id='logo' to='/'>Relatos de Papel</Link>
         </h1>
         <h1 className='text-2xl font-semibold md:hidden z-50'>
-          <Link to='/'>RP</Link>
+          <Link id='logo_movile' to='/'>RP</Link>
         </h1>
         {path !== '/' && (
           <form onSubmit={handleSubmit} className='w-full max-w-[300px] flex'>
-            <Input type='text' placeholder='Buscar' className='' onChange={(e) => { setFilter(e.target.value) }}/>
-            <Button variant='ghost' className='' onClick={() => filter && navigate(`/store/books?filter=${filter}`)}>
+            <Input id='input_busqueda' type='text' placeholder='Buscar' className='' onChange={(e) => { setFilter(e.target.value) }}/>
+            <Button id='button_busqueda' variant='ghost' className='' onClick={() => filter && navigate(`/store/books?filter=${filter}`)}>
               <Search />
             </Button>
           </form>
