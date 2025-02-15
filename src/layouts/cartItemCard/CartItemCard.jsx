@@ -41,6 +41,7 @@ export const CartItemCard = ({ item }) => {
               <div className='flex items-center gap-2 md:gap-4 md:max-w-[30%]'>
                 <p className='flex font-bold w-full'>Cantidad: </p>
                 <Input
+                  id={`input_quantity_${item.id}`}
                   className='w-full'
                   type='number'
                   value={item.quantity}
@@ -49,14 +50,14 @@ export const CartItemCard = ({ item }) => {
                   max={10}
                 />
               </div>
-              <Button variant='secondary' onClick={handleRemove} className='hidden sm:flex'>
+              <Button id={`delete_button_${item.id}`} variant='secondary' onClick={handleRemove} className='hidden sm:flex'>
                 <Trash className='text-red-600'/>
               </Button>
             </div>
           </>
         )}
         cardFooter={() => (
-          <Button variant='secondary' onClick={handleRemove} className='w-full flex sm:hidden'>
+          <Button id={`delete_button_movile_${item.id}`} variant='secondary' onClick={handleRemove} className='w-full flex sm:hidden'>
             <Trash className='text-red-600'/>
           </Button>
         )}
