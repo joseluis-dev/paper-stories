@@ -59,7 +59,7 @@ export const DetailInfo = ({ book }) => {
             </div>
           )}
           cardFooter={() => (
-            <Button id='cart_detail_button' className="w-full" onClick={() => handleAddToCart(book)} disabled={!book.price}>
+            <Button id='cart_detail_button' data-testid='cart_detail_button' className="w-full" onClick={() => handleAddToCart(book)} disabled={!book.price}>
               <ShoppingCart /> Add to cart {book.price && `($${book.price})`}
             </Button>
           )}

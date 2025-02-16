@@ -20,7 +20,7 @@ export const ImageCard = ({ book, action = () => {} }) => {
       )}
       cardContent={() => (
         <div className="flex flex-col items-center gap-2">
-          <Link id={`link_img_${book.id}`} to={`/store/books/${book.id}`}>
+          <Link id={`link_img_${book.id}`} data-testid={`link_img_${book.id}`} to={`/store/books/${book.id}`}>
             <img src={book.image} alt={book.title} className="h-48 max-w-[200px] object-cover rounded-md" />
           </Link>
           <div className="flex flex-col w-full gap-2 overflow-auto min-h-[68px] max-h-[68px]">
@@ -36,7 +36,7 @@ export const ImageCard = ({ book, action = () => {} }) => {
       )}
       cardFooter={() => (
         <>
-          <Button id={`cart_button_${book.id}`} className="w-full" onClick={() => action(book)} disabled={!book.price}>
+          <Button id={`cart_button_${book.id}`} data-testid={'add_to_cart_button'} className="w-full" onClick={() => action(book)} disabled={!book.price}>
             <ShoppingCart /> Add to cart {book.price && `($${book.price})`}
           </Button>
         </>

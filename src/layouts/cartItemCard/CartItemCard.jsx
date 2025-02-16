@@ -18,7 +18,7 @@ export const CartItemCard = ({ item }) => {
     removeFromCart(item)
   }
   return (
-    <div className='flex gap-4 py-4 border-b-[1px]'>
+    <li className='flex gap-4 py-4 border-b-[1px]' data-testid={'cart_item'}>
       <ImageLoader src={item.image} alt={`Imagen de ${item.title}`} className={'min-h-[192px] max-h-[192px] w-full max-w-[128px] rounded-md'}/>
       <MyCard
         classNames={{
@@ -42,6 +42,7 @@ export const CartItemCard = ({ item }) => {
                 <p className='flex font-bold w-full'>Cantidad: </p>
                 <Input
                   id={`input_quantity_${item.id}`}
+                  data-testid={`input_quantity_${item.id}`}
                   className='w-full'
                   type='number'
                   value={item.quantity}
@@ -50,18 +51,18 @@ export const CartItemCard = ({ item }) => {
                   max={10}
                 />
               </div>
-              <Button id={`delete_button_${item.id}`} variant='secondary' onClick={handleRemove} className='hidden sm:flex'>
+              <Button id={`delete_button_${item.id}`} data-testid={'delete_button'} variant='secondary' onClick={handleRemove} className='hidden sm:flex'>
                 <Trash className='text-red-600'/>
               </Button>
             </div>
           </>
         )}
         cardFooter={() => (
-          <Button id={`delete_button_movile_${item.id}`} variant='secondary' onClick={handleRemove} className='w-full flex sm:hidden'>
+          <Button id={`delete_button_movile_${item.id}`} data-testid={'delete_button_movile'} variant='secondary' onClick={handleRemove} className='w-full flex sm:hidden'>
             <Trash className='text-red-600'/>
           </Button>
         )}
       />
-    </div>
+    </li>
   )
 }

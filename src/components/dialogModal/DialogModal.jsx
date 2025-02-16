@@ -8,7 +8,8 @@ export const DialogModal = ({ open, onOpenChange, success }) => {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            {success ? <Check size={20} color='green'/> : <X size={20} color='red'/>} {success ? 'Transacción Exitosa' : 'Error'}
+            <span>{success ? <Check size={20} color='green'/> : <X size={20} color='red'/>}</span>
+            <span>{success ? 'Transacción Exitosa' : 'Error'}</span>
           </DialogTitle>
           <DialogDescription>
             {success
@@ -19,7 +20,7 @@ export const DialogModal = ({ open, onOpenChange, success }) => {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button type="submit" onClick={() => onOpenChange(false)}>Aceptar</Button>
+          <Button data-testid='confirm_button' type="submit" onClick={() => onOpenChange(false)}>Aceptar</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

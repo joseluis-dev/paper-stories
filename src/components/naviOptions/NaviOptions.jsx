@@ -17,7 +17,7 @@ export const NaviOptions = ({ items = [], className = '' }) => {
     } else {
       return (
         <NavigationMenuItem key={index}>
-          <Link id={`nav_${item.title}`} to={item.link} className={`${navigationMenuTriggerStyle()} ${className}`}>
+          <Link id={`nav_${item.title}`} data-testid={`nav_${item.title}`} to={item.link} className={`${navigationMenuTriggerStyle()} ${className}`}>
             {item.title}
           </Link>
         </NavigationMenuItem>

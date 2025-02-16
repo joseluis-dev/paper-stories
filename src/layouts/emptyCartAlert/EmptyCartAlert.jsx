@@ -15,7 +15,7 @@ export const EmptyCartAlert = () => {
                 <p>Ve a la tienda y agrega unos cuantos.</p>
               </div>
               <div className='flex justify-center items-center'>
-                <Link id='empty_cart_button' to='/store' className='flex h-fit items-center bg-primary rounded-lg p-2 text-text-dark dark:text-text-light justify-center gap-2 hover:bg-primary/90'>
+                <Link id='empty_cart_button' data-testid='empty_cart_button' to='/store' className='flex h-fit items-center bg-primary rounded-lg p-2 text-text-dark dark:text-text-light justify-center gap-2 hover:bg-primary/90'>
                   <ShoppingBag /> Ir a la tienda
                 </Link>
               </div>

@@ -10,7 +10,7 @@ export const CheckoutDetail = () => {
       <p className='self-end pr-2'>Total: ${total}</p>
       <ul className='flex flex-col max-h-[384px] overflow-auto pr-2'>
         {cart.map((item) => (
-          <li key={item.id} className='flex justify-between py-4 border-b-[1px]'>
+          <li key={item.id} className='flex justify-between py-4 border-b-[1px]' data-testid={'checkout_item'}>
             <div className='flex gap-2'>
               <span>{item.quantity}</span>
               <span>{item.title}</span>

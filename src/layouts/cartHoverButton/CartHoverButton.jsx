@@ -15,12 +15,17 @@ export const CartHoverButton = () => {
       trigger={
         <Button
           id='cart_button'
+          data-testid='cart_button'
           variant="link"
           className={`${navigationMenuTriggerStyle()} text-blue-500 relative`}
           onClick={() => navigate('/store/cart')}
         >
           <ShoppingCart />
-          <span id='cart_count' className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-blue-100 transform translate-x-1/2 -translate-y-1/2 bg-blue-600 rounded-full">
+          <span
+            id='cart_count'
+            data-testid='cart_count'
+            className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-blue-100 transform translate-x-1/2 -translate-y-1/2 bg-blue-600 rounded-full"
+          >
             {totalItems}
           </span>
         </Button>

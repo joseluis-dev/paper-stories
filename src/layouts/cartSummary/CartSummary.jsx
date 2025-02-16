@@ -12,7 +12,7 @@ export const CartSummary = ({ cart, total }) => {
           <p className='text-2xl'>${total}</p>
         </div>
       </div>
-      <Link to={'/store/checkout'} className='flex items-center bg-primary rounded-lg p-2 text-text-dark dark:text-text-light justify-center gap-2 md:self-end w-full md:max-w-fit md:mx-6 hover:bg-primary/90'>
+      <Link id='payment-button' data-testid='payment-button' to={'/store/checkout'} className='flex items-center bg-primary rounded-lg p-2 text-text-dark dark:text-text-light justify-center gap-2 md:self-end w-full md:max-w-fit md:mx-6 hover:bg-primary/90'>
         <ScanBarcode /> Proceder al pago
       </Link>
     </div>
